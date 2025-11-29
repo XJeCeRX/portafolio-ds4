@@ -1,0 +1,115 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                    CHINOS CAFE - SISTEMA POS WEB                         ║
+║                    GUÍA DE INSTALACIÓN RÁPIDA                           ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+📋 REQUISITOS DEL SISTEMA
+   ✓ PHP 7.4 o superior
+   ✓ MySQL 5.7+ o MariaDB
+   ✓ Servidor Web (Apache/Nginx)
+   ✓ XAMPP, WAMP, o LAMP instalado
+
+═══════════════════════════════════════════════════════════════════════════
+
+🚀 INSTALACIÓN PASO A PASO
+
+PASO 1: Instalar XAMPP
+   - Descargar XAMPP desde: https://www.apachefriends.org/
+   - Instalar en C:\xampp (Windows) o /opt/lampp (Linux)
+
+PASO 2: Copiar Archivos
+   - Copiar la carpeta "chinos_coffe" a la carpeta de proyectos
+   - Windows: C:\xampp\htdocs\chinos_coffe
+   - Linux: /var/www/html/chinos_coffe
+
+PASO 3: Crear Base de Datos
+   Opción A: Usando MySQL Workbench / phpMyAdmin
+   - Abrir phpMyAdmin: http://localhost/phpmyadmin
+   - Importar el archivo: sql/schema.sql
+   
+   Opción B: Usando Línea de Comandos (Windows)
+   - Ejecutar: install.bat
+   
+   Opción C: Manual
+   mysql -u root -p
+   source C:/xampp/htdocs/chinos_coffe/sql/schema.sql
+
+PASO 4: Configurar Credenciales (si es necesario)
+   - Abrir: config/database.php
+   - Cambiar usuario/password si no usa "root"
+
+PASO 5: Iniciar Servidores
+   - Abrir XAMPP Control Panel
+   - Iniciar Apache
+   - Iniciar MySQL
+
+PASO 6: Acceder al Sistema
+   - Abrir navegador: http://localhost/chinos_coffe/
+   
+═══════════════════════════════════════════════════════════════════════════
+
+✅ VERIFICACIÓN DE INSTALACIÓN
+
+1. La página principal debe cargar sin errores
+2. Debe poder navegar entre módulos (Ventas, Inventario, Proveedores)
+3. El formulario de contacto debe funcionar
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 USO DEL SISTEMA
+
+VENTAS:
+   1. Ir a "Ventas" en el menú
+   2. Seleccionar productos del panel derecho
+   3. Confirmar cliente y método de pago
+   4. Procesar venta
+   5. Ver historial de ventas
+
+INVENTARIO:
+   1. Ir a "Inventario"
+   2. Agregar productos desde el formulario
+   3. Ver productos con control de stock
+
+PROVEEDORES:
+   1. Ir a "Proveedores"
+   2. Registrar nuevos proveedores
+   3. Ver proveedores existentes
+
+═══════════════════════════════════════════════════════════════════════════
+
+🐛 SOLUCIÓN DE PROBLEMAS
+
+Error: "Cannot connect to database"
+  → Verificar que MySQL esté corriendo en XAMPP
+  → Revisar credenciales en config/database.php
+
+Error: Página en blanco
+  → Habilitar errores en php.ini
+  → Verificar que Apache esté corriendo
+
+Error: "Call to undefined function mysqli_connect()"
+  → Instalar/activar extensión mysqli en PHP
+  → Editar php.ini y descomentar: extension=mysqli
+
+═══════════════════════════════════════════════════════════════════════════
+
+📊 DATOS DE PRUEBA
+
+El sistema incluye productos y proveedores de ejemplo:
+   - Café Expresso, Americano, Latte
+   - Croissant y Torta de Chocolate
+   - 2 Proveedores registrados
+
+Use estos datos para hacer pruebas inmediatas.
+
+═══════════════════════════════════════════════════════════════════════════
+
+📞 SOPORTE
+
+Para más información, consulte el archivo README.md
+
+═══════════════════════════════════════════════════════════════════════════
+
+© 2024 Chinos Café — Sistema POS Web
+
+

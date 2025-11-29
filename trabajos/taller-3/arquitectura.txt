@@ -1,0 +1,201 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║              ARQUITECTURA DEL SISTEMA - CHINOS CAFE POS                  ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+┌───────────────────────────────────────────────────────────────────────────┐
+│                           CAPA DE PRESENTACIÓN                            │
+│                                                                           │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
+│  │ index.php    │  │ ventas.php   │  │inventario.php│  │proveedores.php│ │
+│  │ (Principal)  │  │ (Ventas)     │  │(Inventario)  │  │(Proveedores) │ │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘ │
+│         │                  │                  │                  │         │
+│         └──────────────────┴──────────────────┴──────────────────┘         │
+│                               │                                               │
+│                         [Tailwind CSS]                                       │
+│                         [JavaScript]                                         │
+│                         [AOS Animations]                                    │
+└─────────────────────────────────┬───────────────────────────────────────────┘
+                                   │
+                                   │ PHP/HTTP
+                                   ▼
+┌───────────────────────────────────────────────────────────────────────────┐
+│                          CAPA DE APLICACIÓN                               │
+│                                                                           │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │                    config/database.php                           │   │
+│  │                  (Conexión a BD)                                 │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+│                                                                           │
+│  ┌───────────────┐  ┌───────────────┐  ┌───────────────┐              │
+│  │procesar_venta │  │procesar_inv.  │  │procesar_prov. │              │
+│  │.php           │  │.php           │  │.php           │              │
+│  └───────┬───────┘  └───────┬───────┘  └───────┬───────┘              │
+│          │                   │                   │                        │
+│          └───────────────────┴───────────────────┘                        │
+│                           │                                                │
+│                    [Prepared Statements]                                   │
+│                    [Transacciones MySQL]                                   │
+└───────────────────────────┬────────────────────────────────────────────────┘
+                            │
+                            │ MySQL Protocol
+                            ▼
+┌───────────────────────────────────────────────────────────────────────────┐
+│                          CAPA DE DATOS                                    │
+│                                                                           │
+│  ┌─────────────────────────────────────────────────────────────────┐   │
+│  │                     MySQL Server                                  │   │
+│  │                                                                   │   │
+│  │  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐   │   │
+│  │  │  proveedores │────▶│  inventario   │────▶│   ventas     │   │   │
+│  │  │              │     │              │     │              │   │   │
+│  │  └──────────────┘     └──────┬───────┘     └──────┬───────┘   │   │
+│  │                              │                     │           │   │
+│  │                              ▼                     ▼           │   │
+│  │                        ┌──────────────┐     ┌──────────────┐   │   │
+│  │                        │detalle_venta │     │  contactos   │   │   │
+│  │                        │              │     │              │   │   │
+│  │                        └──────────────┘     └──────────────┘   │   │
+│  │                                                                   │   │
+│  │  Motor: InnoDB (Transacciones ACID)                              │   │
+│  │  Charset: utf8mb4                                                 │   │
+│  └─────────────────────────────────────────────────────────────────┘   │
+└───────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+
+                    FLUJO DE DATOS EN UNA VENTA
+
+   USUARIO (Browser)
+         │
+         │ 1. Selecciona productos en ventas.php
+         ▼
+   [JavaScript] Maneja carrito en memoria
+         │
+         │ 2. Usuario confirma venta
+         ▼
+   procesar_venta.php
+         │
+         │ 3. Abre transacción MySQL
+         ▼
+   MySQL: INSERT INTO ventas
+         │
+         │ 4. Obtiene id_venta
+         ▼
+   MySQL: INSERT INTO detalle_venta (múltiples registros)
+         │
+         │ 5. Actualiza stock
+         ▼
+   MySQL: UPDATE inventario SET stock = stock - cantidad
+         │
+         │ 6. Confirma transacción
+         ▼
+   Redirecciona a ventas.php con mensaje de éxito
+
+═══════════════════════════════════════════════════════════════════════════
+
+                      DIAGRAMA ENTIDAD-RELACIÓN
+
+┌─────────────────┐
+│  PROVEEDORES    │
+├─────────────────┤
+│ id_proveedor PK │
+│ nombre          │  ┌───┐
+│ contacto        │  │ 1 │
+│ telefono        │  │   │
+│ email           │◄─┤   │
+└─────────────────┘  └───┘
+                          │
+                          │ 1:N
+                          ▼
+                   ┌──────────────────┐
+                   │   INVENTARIO     │
+                   ├──────────────────┤
+                   │ id_producto PK   │
+                   │ nombre           │
+                   │ precio_compra    │
+                   │ precio_venta     │
+                   │ stock            │
+                   │ id_proveedor FK  │─┐
+                   └──────────────────┘ │
+                          │             │
+                          │             │
+                          ▼             │
+                   ┌──────────────────┐ │
+                   │  DETALLE_VENTA   │ │
+                   ├──────────────────┤ │
+                   │ id_detalle PK    │ │
+                   │ id_venta FK      │ │
+                   │ id_producto FK ──┼─┘
+                   │ cantidad        │ │
+                   │ precio_unitario │ │
+                   │ subtotal        │ │
+                   └──────────────────┘
+                          │
+                          ▼
+                   ┌──────────────────┐
+                   │     VENTAS       │
+                   ├──────────────────┤
+                   │ id_venta PK      │
+                   │ numero_factura   │
+                   │ cliente         │
+                   │ total           │
+                   │ fecha_venta     │
+                   └──────────────────┘
+
+                   ┌──────────────────┐
+                   │   CONTACTOS      │ (Independiente)
+                   ├──────────────────┤
+                   │ id_contacto PK   │
+                   │ nombre          │
+                   │ correo          │
+                   │ mensaje         │
+                   └──────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+
+                        SERVIDORES CONFIGURADOS
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 1. SERVIDOR WEB (Apache/Nginx)                                           │
+│    - Puerto: 80 (HTTP)                                                   │
+│    - Documento raíz: /htdocs/chinos_coffe                                │
+│    - PHP 7.4+ con extensión mysqli                                       │
+│    - URL: http://localhost/chinos_coffe/                                 │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 2. MYSQL SERVER                                                          │
+│    - Puerto: 3306                                                        │
+│    - Base de datos: chinos_cafe                                          │
+│    - Usuario: root (configurable)                                        │
+│    - Motor: InnoDB (multihilo, transaccional)                            │
+└──────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 3. SERVIDOR DE ARCHIVOS                                                  │
+│    - Backups automáticos de BD                                           │
+│    - Logs del sistema                                                    │
+│    - Almacenamiento de documentos                                        │
+└──────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════
+
+                           CARACTERÍSTICAS TÉCNICAS
+
+✓ Arquitectura Cliente-Servidor (3 capas)
+✓ SGBD Multihilo (MySQL InnoDB)
+✓ Prepared Statements (anti SQL injection)
+✓ Transacciones ACID
+✓ Responsive Design (Tailwind CSS)
+✓ Índices para optimización
+✓ Validación de formularios
+✓ Sanitización de entradas
+✓ Protección básica del frontend
+
+═══════════════════════════════════════════════════════════════════════════
+
+© 2024 Chinos Café — Sistema POS Web
+Para más información, consulte README.md
+
+

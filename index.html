@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Desarrollo de Software IV</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS (Animate on Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <!-- Background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+    </div>
+    <!-- 3D Floating Elements - REDUCED for performance -->
+    <div class="floating-3d">
+        <div class="cube-3d cube-1"></div>
+        <div class="cube-3d cube-2"></div>
+        <div class="sphere-3d sphere-1"></div>
+        <div class="pyramid-3d pyramid-1"></div>
+    </div>
+    <!-- Glow Effects - REDUCED -->
+    <div class="glow-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-wrapper">
+            <div class="logo">
+                <span>JM</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#trabajos">Trabajos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">Portafolio 2025</div>
+                <h1 class="hero-title">
+                    <span class="title-highlight">Desarrollo</span>
+                    <span class="title-main">de Software</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Estudiante de Desarrollo y Gestión de Software | 2do Año
+                </p>
+                <p class="hero-description">
+                    Explorando el mundo del desarrollo de software a través de proyectos 
+                    innovadores y soluciones creativas.
+                </p>
+                <div class="hero-actions">
+                    <a href="#trabajos" class="btn btn-primary"><span>Ver Trabajos</span></a>
+                    <a href="#contacto" class="btn btn-outline"><span>Contactar</span></a>
+                </div>
+                <div class="hero-badges">
+                    <span class="badge badge-emerald">Desarrollo Web</span>
+                    <span class="badge badge-indigo">Base de Datos</span>
+                    <span class="badge badge-yellow">PHP & MySQL</span>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">2</div>
+                        <div class="stat-label">Año</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">∞</div>
+                        <div class="stat-label">Pasión</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Dedicación</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">01</span>
+                <h2 class="section-title">Sobre Mí</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <div class="image-placeholder">
+                            <span>JM</span>
+                        </div>
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h3>Julio Montenegro</h3>
+                    <p class="about-intro">
+                        Estudiante de segundo año en la carrera de 
+                        <strong>Desarrollo y Gestión de Software</strong> en la 
+                        Universidad Tecnológica de Panamá.
+                    </p>
+                    <p>
+                        Actualmente curso la asignatura de <strong>Desarrollo de Software IV</strong>, 
+                        donde he desarrollado diversos proyectos y asignaciones que demuestran 
+                        mi crecimiento y aprendizaje continuo en el desarrollo de software.
+                    </p>
+                    <div class="skills">
+                        <h4>Habilidades</h4>
+                        <div class="skills-list">
+                            <span class="skill">HTML/CSS</span>
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">Desarrollo Web</span>
+                            <span class="skill">Programación</span>
+                            <span class="skill">Software Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trabajos -->
+    <section id="trabajos" class="trabajos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">02</span>
+                <h2 class="section-title">Trabajos del Curso</h2>
+            </div>
+            
+            <!-- Tabs Navigation -->
+            <div class="trabajos-tabs">
+                <button class="tab-btn active" data-tab="laboratorios">
+                    <span>Laboratorios</span>
+                    <div class="tab-indicator"></div>
+                </button>
+                <button class="tab-btn" data-tab="talleres">
+                    <span>Talleres</span>
+                    <div class="tab-indicator"></div>
+                </button>
+                <button class="tab-btn" data-tab="parciales">
+                    <span>Parciales</span>
+                    <div class="tab-indicator"></div>
+                </button>
+            </div>
+
+            <!-- Laboratorios -->
+            <div class="tab-content active" id="laboratorios">
+                <div class="trabajos-grid">
+                    <div class="trabajo-item">
+                        <div class="trabajo-header">
+                            <span class="trabajo-type">LABORATORIO</span>
+                            <span class="trabajo-number">01</span>
+                        </div>
+                        <div class="trabajo-content">
+                            <h3>Sitio Web - Municipio de Alanje</h3>
+                            <p>Sitio web institucional del Municipio de Alanje con navegación completa. Incluye secciones de servicios, departamentos, historia, visión y misión, clientes y contacto. Diseño moderno con animaciones y responsive.</p>
+                            <div class="trabajo-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>Web</span>
+                                <span>Responsive</span>
+                            </div>
+                            <div class="trabajo-meta">
+                                <span class="trabajo-date">Laboratorio 1</span>
+                                <a href="trabajos/laboratorio-1/index.html" target="_blank" class="trabajo-link">Ver trabajo →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trabajo-item">
+                        <div class="trabajo-header">
+                            <span class="trabajo-type">LABORATORIO</span>
+                            <span class="trabajo-number">02</span>
+                        </div>
+                        <div class="trabajo-content">
+                            <h3>Sitio Web - JC de Las Lomas</h3>
+                            <p>Sitio web institucional moderno para Junta Comunal de Las Lomas. Diseño con Tailwind CSS, animaciones AOS, glassmorphism y diseño responsive. Incluye secciones de servicios, noticias, transparencia, equipo y contacto con formulario funcional.</p>
+                            <div class="trabajo-tech">
+                                <span>HTML</span>
+                                <span>Tailwind CSS</span>
+                                <span>AOS</span>
+                                <span>JavaScript</span>
+                                <span>Responsive</span>
+                            </div>
+                            <div class="trabajo-meta">
+                                <span class="trabajo-date">Laboratorio 2</span>
+                                <a href="trabajos/laboratorio-2/index.html" target="_blank" class="trabajo-link">Ver trabajo →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trabajo-item">
+                        <div class="trabajo-header">
+                            <span class="trabajo-type">LABORATORIO</span>
+                            <span class="trabajo-number">03</span>
+                        </div>
+                        <div class="trabajo-content">
+                            <h3>Laboratorio 3</h3>
+                            <p>Descripción del tercer laboratorio realizado en el curso.</p>
+                            <div class="trabajo-meta">
+                                <span class="trabajo-date">Semana 5</span>
+                                <a href="#" class="trabajo-link">Ver trabajo →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Talleres -->
+            <div class="tab-content" id="talleres">
+                <div class="trabajos-grid">
+                    <div class="trabajo-item">
+                        <div class="trabajo-header">
+                            <span class="trabajo-type">TALLER</span>
+                            <span class="trabajo-number">01</span>
+                        </div>
+                        <div class="trabajo-content">
+                            <h3>Sitio Web CAF - Universidad de Chiriquí</h3>
+                            <p>Sitio web sobre Diplomados CAF con secciones de Liderazgo para la Transformación y Gobernabilidad y Gerencia Política. Incluye módulos educativos y navegación entre páginas.</p>
+                            <div class="trabajo-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>Web</span>
+                            </div>
+                            <div class="trabajo-meta">
+                                <span class="trabajo-date">Taller 1</span>
+                                <a href="trabajos/taller-1/index.html" target="_blank" class="trabajo-link">Ver trabajo →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trabajo-item">
+                        <div class="trabajo-header">
+                            <span class="trabajo-type">TALLER</span>
+                            <span class="trabajo-number">02</span>
+                        </div>
+                        <div class="trabajo-content">
+                            <h3>Sucesos y Más - Agencia Creativa</h3>
+                            <p>Sitio web de agencia creativa desarrollado con PHP modular. Incluye secciones de servicios, productos, clientes y contacto. Diseño moderno con Tailwind CSS, animaciones AOS, glassmorphism y menú móvil responsive.</p>
+                            <div class="trabajo-tech">
+                                <span>PHP</span>
+                                <span>Tailwind CSS</span>
+                                <span>AOS</span>
+                                <span>Font Awesome</span>
+                                <span>Responsive</span>
+                            </div>
+                            <div class="trabajo-meta">
+                                <span class="trabajo-date">Taller 2</span>
+                                <a href="trabajos/taller-2/index.php" target="_blank" class="trabajo-link">Ver trabajo →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trabajo-item">
+                        <div class="trabajo-header">
+                            <span class="trabajo-type">TALLER</span>
+                            <span class="trabajo-number">03</span>
+                        </div>
+                        <div class="trabajo-content">
+                            <h3>Chinos Café - Sistema POS Web</h3>
+                            <p>Sistema completo de punto de venta (POS) para gestión de café. Incluye módulos de ventas, inventario, proveedores y contactos. Desarrollado con PHP, MySQL, Tailwind CSS y arquitectura cliente-servidor. Sistema transaccional con base de datos relacional.</p>
+                            <div class="trabajo-tech">
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                                <span>Tailwind CSS</span>
+                                <span>AOS</span>
+                                <span>POS</span>
+                            </div>
+                            <div class="trabajo-meta">
+                                <span class="trabajo-date">Taller 3</span>
+                                <a href="trabajos/taller-3/index.php" target="_blank" class="trabajo-link">Ver trabajo →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parciales -->
+            <div class="tab-content" id="parciales">
+                <div class="trabajos-grid">
+                    <div class="trabajo-item">
+                        <div class="trabajo-header">
+                            <span class="trabajo-type">PARCIAL</span>
+                            <span class="trabajo-number">01</span>
+                        </div>
+                        <div class="trabajo-content">
+                            <h3>Sitio Web - Centro Especializado en Lenguas (CEL)</h3>
+                            <p>Sitio web institucional del CEL de la Universidad Tecnológica de Panamá. Incluye secciones de programas académicos, servicios, información institucional y formulario de contacto. Diseño profesional con colores institucionales UTP, responsive y protección de contenido.</p>
+                            <div class="trabajo-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Font Awesome</span>
+                                <span>Responsive</span>
+                            </div>
+                            <div class="trabajo-meta">
+                                <span class="trabajo-date">Parcial 1</span>
+                                <a href="trabajos/parcial-1/index.html" target="_blank" class="trabajo-link">Ver trabajo →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trabajo-item">
+                        <div class="trabajo-header">
+                            <span class="trabajo-type">PARCIAL</span>
+                            <span class="trabajo-number">02</span>
+                        </div>
+                        <div class="trabajo-content">
+                            <h3>Sistema de Mantenimiento NIBARRA</h3>
+                            <p>Sistema web completo para gestión de mantenimiento de equipos. Incluye autenticación, CRUD de equipos, calendario de mantenimientos, replicación MySQL/MongoDB, chatbot integrado y dashboard con Tailwind CSS. Arquitectura cliente-servidor con sincronización automática.</p>
+                            <div class="trabajo-tech">
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                                <span>MongoDB</span>
+                                <span>Tailwind CSS</span>
+                                <span>JavaScript</span>
+                                <span>Composer</span>
+                            </div>
+                            <div class="trabajo-meta">
+                                <span class="trabajo-date">Parcial 2</span>
+                                <a href="trabajos/parcial-2/login.php" target="_blank" class="trabajo-link">Ver trabajo →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trabajo-item">
+                        <div class="trabajo-header">
+                            <span class="trabajo-type">PARCIAL</span>
+                            <span class="trabajo-number">03</span>
+                        </div>
+                        <div class="trabajo-content">
+                            <h3>Parcial 3</h3>
+                            <p>Descripción del tercer parcial realizado en el curso.</p>
+                            <div class="trabajo-meta">
+                                <span class="trabajo-date">Tercer Parcial</span>
+                                <a href="#" class="trabajo-link">Ver trabajo →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">04</span>
+                <h2 class="section-title">Contacto</h2>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Hablemos</h3>
+                    <p>Estoy disponible para proyectos, colaboraciones o simplemente para conectar.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>julio.montenegro@utp.ac.pa</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🏫</span>
+                            <span>Universidad Tecnológica de Panamá</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📚</span>
+                            <span>Desarrollo y Gestión de Software - 2do Año</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Julio Montenegro. Portafolio Desarrollo de Software IV.</p>
+            <p>Universidad Tecnológica de Panamá - Facultad de Sistemas Computacionales</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

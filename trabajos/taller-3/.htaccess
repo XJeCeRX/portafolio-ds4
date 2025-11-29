@@ -1,0 +1,54 @@
+# Protección del sistema Chinos Café
+# Apache configuration
+
+# Habilitar reescritura de URL
+RewriteEngine On
+
+# Protección de archivos de configuración
+<FilesMatch "^(config|\.htaccess|\.git)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Prevenir acceso a archivos SQL
+<FilesMatch "\.sql$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Seguridad adicional
+ServerSignature Off
+
+# Comprimir archivos
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript
+</IfModule>
+
+# Cache control
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+</IfModule>
+
+# Prevenir hotlinking
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?localhost [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?chinoscafe\.com [NC]
+
+# Protección XSS
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+
+# Charset
+AddDefaultCharset UTF-8
+
+# PHP settings
+php_flag display_errors Off
+php_flag log_errors On
+php_value error_log logs/php_errors.log
+
+

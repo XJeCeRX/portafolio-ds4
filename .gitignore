@@ -1,0 +1,40 @@
+# Logs
+*.log
+logs/
+error.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Vendor (PHP dependencies - opcional, puedes incluirlos si quieres)
+# trabajos/*/vendor/
+
+# Uploads (archivos subidos por usuarios)
+trabajos/*/uploads/*
+!trabajos/*/uploads/.gitkeep
+
+# Database configs (pueden contener información sensible)
+# Descomenta si no quieres subir configuraciones de base de datos
+# trabajos/*/config/database.php
+
+# Node modules (si usas npm)
+node_modules/
+package-lock.json
+
+# Build files
+dist/
+build/
+

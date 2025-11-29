@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JC de Las Lomas — Municipio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <meta name="description" content="Sitio institucional de JC de Las Lomas — servicios municipales, noticias, transparencia y contacto.">
+  <style>
+    :root { --glass: rgba(255,255,255,0.06); --glass-2: rgba(255,255,255,0.04); }
+    body { font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    .accent-border { box-shadow: 0 6px 24px rgba(99,102,241,0.08), 0 1px 0 rgba(255,255,255,0.02) inset; }
+    .glass {
+      background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 100%);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-800 text-slate-100">
+
+  <!-- NAV -->
+  <header class="w-full fixed top-0 left-0 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg">
+          <i class="fa-solid fa-city text-white"></i>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">JC de</p>
+          <p class="text-xs -mt-1 text-slate-300">Las Lomas</p>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-6 text-slate-300">
+        <a href="#servicios" class="hover:text-white transition">Servicios</a>
+        <a href="#noticias" class="hover:text-white transition">Noticias</a>
+        <a href="#transparencia" class="hover:text-white transition">Transparencia</a>
+        <a href="#equipo" class="hover:text-white transition">Equipo</a>
+        <a href="#contact" class="hover:text-white transition">Contacto</a>
+        <button id="ctaTop" class="ml-4 px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 transition text-white font-semibold shadow">Servicios en línea</button>
+      </div>
+
+      <!-- mobile menu button -->
+      <button id="btnMobile" class="md:hidden p-2 rounded bg-slate-800 glass">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- mobile drawer -->
+    <div id="mobileMenu" class="md:hidden px-6 pb-6 hidden glass">
+      <a href="#servicios" class="block py-2 text-slate-200">Servicios</a>
+      <a href="#noticias" class="block py-2 text-slate-200">Noticias</a>
+      <a href="#transparencia" class="block py-2 text-slate-200">Transparencia</a>
+      <a href="#equipo" class="block py-2 text-slate-200">Equipo</a>
+      <a href="#contact" class="block py-2 text-slate-200">Contacto</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="pt-28">
+    <section class="relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right" data-aos-duration="900">
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-white">
+            JC de Las Lomas<br class="hidden md:block">— Servicios para la comunidad
+          </h1>
+          <p class="mt-6 text-slate-300 max-w-xl">
+            Entidad municipal dedicada a mejorar la calidad de vida del municipio. Atención al ciudadano, servicios online, eventos comunitarios y transparencia administrativa.
+          </p>
+
+          <div class="mt-8 flex gap-4">
+            <a href="#servicios" class="px-5 py-3 rounded-full bg-white text-emerald-700 font-semibold shadow hover:scale-[1.02] transition transform">Ver servicios</a>
+            <a href="#noticias" class="px-5 py-3 rounded-full glass text-slate-200 border border-slate-700 hover:bg-slate-800 transition">Últimas noticias</a>
+          </div>
+
+          <div class="mt-8 flex gap-3 flex-wrap">
+            <span class="px-3 py-1 rounded-full bg-emerald-600/20 text-emerald-200 text-sm">Atención al ciudadano</span>
+            <span class="px-3 py-1 rounded-full bg-indigo-600/20 text-indigo-200 text-sm">Trámites digitales</span>
+            <span class="px-3 py-1 rounded-full bg-yellow-600/20 text-yellow-200 text-sm">Eventos comunitarios</span>
+          </div>
+        </div>
+
+        <div class="relative" data-aos="fade-left" data-aos-duration="900">
+          <div class="absolute -left-8 -top-8 w-80 h-80 rounded-3xl bg-gradient-to-br from-emerald-600 to-teal-600 opacity-30 blur-3xl transform rotate-6"></div>
+
+          <div class="space-y-6 relative z-10">
+            <div class="p-6 rounded-2xl glass accent-border">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-sm text-slate-300">Atención</p>
+                  <h3 class="font-semibold text-white">Horario de oficinas</h3>
+                </div>
+                <div class="text-emerald-400 text-2xl">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+              </div>
+              <div class="mt-4 text-slate-300 text-sm">
+                Lunes a Viernes: <strong>8:00 — 16:00</strong><br> Sábados (rotativos): <strong>9:00 — 13:00</strong>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl glass accent-border">
+              <div class="flex gap-4 items-center">
+                <div class="w-12 h-12 rounded-lg bg-emerald-700 flex items-center justify-center text-white">
+                  <i class="fa-solid fa-hands-helping"></i>
+                </div>
+                <div>
+                  <p class="text-sm text-slate-300">Servicios</p>
+                  <h4 class="font-semibold text-white">Gestión comunitaria</h4>
+                </div>
+              </div>
+              <div class="mt-3 text-slate-300 text-sm">Inscripciones, permisos, mantenimiento de áreas públicas y atención social.</div>
+            </div>
+
+            <div class="p-5 rounded-2xl glass border border-slate-700">
+              <div class="flex items-start gap-4">
+                <div class="text-3xl text-yellow-400"><i class="fa-solid fa-bullhorn"></i></div>
+                <div>
+                  <p class="text-sm text-slate-300">Participación</p>
+                  <h4 class="font-semibold text-white">Eventos & Audiencias</h4>
+                  <p class="mt-2 text-slate-300 text-sm">Calendario de actividades y espacios para la participación ciudadana.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="servicios" class="max-w-6xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-up" data-aos-duration="800">
+          <h2 class="text-3xl font-bold">Nuestros servicios</h2>
+          <p class="mt-4 text-slate-300 max-w-lg">Ofrecemos servicios dirigidos a mejorar la vida en el municipio: trámites, permisos, mantenimiento y programas sociales.</p>
+
+          <ul class="mt-6 space-y-3 text-slate-300">
+            <li class="flex items-start gap-3">
+              <span class="mt-1 text-emerald-400"><i class="fa-solid fa-file-contract"></i></span>
+              <span><strong>Trámites administrativos</strong> (licencias, permisos, certificados).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 text-emerald-400"><i class="fa-solid fa-tree"></i></span>
+              <span><strong>Mantenimiento urbano</strong> (parques, alumbrado, limpieza).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="mt-1 text-emerald-400"><i class="fa-solid fa-hands-helping"></i></span>
+              <span><strong>Programas sociales</strong> y apoyo a familias en situación de vulnerabilidad.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div data-aos="zoom-in" data-aos-duration="800">
+          <div class="grid grid-cols-1 gap-6">
+            <div class="p-6 rounded-xl glass accent-border">
+              <h3 class="font-semibold text-white">Servicios en línea</h3>
+              <p class="mt-2 text-slate-300 text-sm">Acceso a formularios y consultas de manera digital (próximamente).</p>
+            </div>
+            <div class="p-6 rounded-xl glass accent-border">
+              <h3 class="font-semibold text-white">Reportes ciudadanos</h3>
+              <p class="mt-2 text-slate-300 text-sm">Canal para reportar incidencias en vía pública o servicios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS / EVENTS -->
+    <section id="noticias" class="bg-slate-900/40 py-14">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-2xl font-bold text-white" data-aos="fade-up">Noticias y eventos</h2>
+        <div class="mt-6 grid md:grid-cols-3 gap-6">
+          <article class="p-5 glass rounded-lg" data-aos="fade-right">
+            <div class="text-indigo-400 text-2xl mb-2"><i class="fa-solid fa-calendar-days"></i></div>
+            <h4 class="font-semibold text-white">Feria comunitaria</h4>
+            <p class="mt-2 text-slate-300 text-sm">Sábado 20 — Charlas, música y puestos locales. ¡Trae a la familia!</p>
+            <time class="block mt-3 text-xs text-slate-400">20 Oct 2025</time>
+          </article>
+
+          <article class="p-5 glass rounded-lg" data-aos="fade-up">
+            <div class="text-amber-400 text-2xl mb-2"><i class="fa-solid fa-handshake"></i></div>
+            <h4 class="font-semibold text-white">Campaña de limpieza</h4>
+            <p class="mt-2 text-slate-300 text-sm">Unamos esfuerzos para embellecer nuestras plazas y calles.</p>
+            <time class="block mt-3 text-xs text-slate-400">5 Nov 2025</time>
+          </article>
+
+          <article class="p-5 glass rounded-lg" data-aos="fade-left">
+            <div class="text-rose-400 text-2xl mb-2"><i class="fa-solid fa-bullhorn"></i></div>
+            <h4 class="font-semibold text-white">Audiencia pública</h4>
+            <p class="mt-2 text-slate-300 text-sm">Espacio para que los ciudadanos presenten propuestas y consultas.</p>
+            <time class="block mt-3 text-xs text-slate-400">15 Nov 2025</time>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSPARENCIA / DOCUMENTS -->
+    <section id="transparencia" class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-bold" data-aos="fade-up">Transparencia</h2>
+      <p class="mt-2 text-slate-300 max-w-2xl" data-aos="fade-up" data-aos-delay="80">Descarga documentos institucionales: actas, presupuestos y ordenanzas. (Archivos de ejemplo para la práctica).</p>
+
+      <div class="mt-6 grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="p-4 rounded-xl glass text-center" data-aos="zoom-in">
+          <i class="fa-solid fa-file-lines text-4xl text-indigo-400"></i>
+          <h4 class="mt-3 font-semibold">Presupuesto 2025</h4>
+          <a href="#" class="block mt-2 text-indigo-300 hover:underline">Descargar PDF</a>
+        </div>
+        <div class="p-4 rounded-xl glass text-center" data-aos="zoom-in" data-aos-delay="60">
+          <i class="fa-solid fa-gavel text-4xl text-emerald-400"></i>
+          <h4 class="mt-3 font-semibold">Ordenanzas</h4>
+          <a href="#" class="block mt-2 text-indigo-300 hover:underline">Ver documentos</a>
+        </div>
+        <div class="p-4 rounded-xl glass text-center" data-aos="zoom-in" data-aos-delay="120">
+          <i class="fa-solid fa-book text-4xl text-yellow-400"></i>
+          <h4 class="mt-3 font-semibold">Actas</h4>
+          <a href="#" class="block mt-2 text-indigo-300 hover:underline">Descargar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM / CREDITS -->
+    <section id="equipo" class="max-w-6xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-bold" data-aos="fade-up">Equipo</h2>
+      <p class="mt-2 text-slate-300 max-w-2xl" data-aos="fade-up" data-aos-delay="120">Equipo administrativo y contactos de las áreas clave.</p>
+
+      <div class="mt-6 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="p-4 rounded-xl glass text-center" data-aos="zoom-in">
+          <div class="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white text-2xl">AL</div>
+          <h4 class="mt-4 font-semibold">Alcalde</h4>
+          <p class="text-sm text-slate-300">Nombre Alcalde</p>
+        </div>
+        <div class="p-4 rounded-xl glass text-center" data-aos="zoom-in" data-aos-delay="60">
+          <div class="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white text-2xl">DS</div>
+          <h4 class="mt-4 font-semibold">Directora Social</h4>
+          <p class="text-sm text-slate-300">Nombre Directora</p>
+        </div>
+        <div class="p-4 rounded-xl glass text-center" data-aos="zoom-in" data-aos-delay="120">
+          <div class="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 flex items-center justify-center text-white text-2xl">TM</div>
+          <h4 class="mt-4 font-semibold">Técnico Mantenimiento</h4>
+          <p class="text-sm text-slate-300">Nombre Técnico</p>
+        </div>
+        <div class="p-4 rounded-xl glass text-center" data-aos="zoom-in" data-aos-delay="180">
+          <div class="mx-auto w-20 h-20 rounded-full bg-gradient-to-br from-yellow-500 to-amber-500 flex items-center justify-center text-white text-2xl">AT</div>
+          <h4 class="mt-4 font-semibold">Atención al Ciudadano</h4>
+          <p class="text-sm text-slate-300">Contacto</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-6xl mx-auto px-6 py-16">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-2xl font-bold">Contacto</h2>
+          <p class="mt-3 text-slate-300">Oficinas y canales de atención.</p>
+
+          <ul class="mt-6 text-slate-300 space-y-3">
+            <li><i class="fa-solid fa-location-dot mr-2 text-emerald-400"></i> Calle Principal #123, Las Lomas</li>
+            <li><i class="fa-solid fa-phone mr-2 text-emerald-400"></i> +507 6000-0000</li>
+            <li><i class="fa-solid fa-envelope mr-2 text-emerald-400"></i> contacto@jcdelaslomas.local</li>
+          </ul>
+        </div>
+
+        <form id="contactForm" class="p-6 glass rounded-xl" data-aos="fade-left" onsubmit="return handleForm(event)">
+          <label class="block text-sm text-slate-300">Nombre</label>
+          <input id="name" class="mt-2 w-full p-3 rounded-lg bg-slate-800 border border-slate-700 text-white" required>
+
+          <label class="block text-sm text-slate-300 mt-4">Correo</label>
+          <input id="email" type="email" class="mt-2 w-full p-3 rounded-lg bg-slate-800 border border-slate-700 text-white" required>
+
+          <label class="block text-sm text-slate-300 mt-4">Mensaje</label>
+          <textarea id="message" rows="4" class="mt-2 w-full p-3 rounded-lg bg-slate-800 border border-slate-700 text-white" required></textarea>
+
+          <div class="mt-4 flex items-center justify-between">
+            <small id="formStatus" class="text-xs text-emerald-400 hidden">Mensaje listo (simulado)</small>
+            <button type="submit" class="px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-600 transition text-white font-semibold">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 border-t border-slate-700 mt-6">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-slate-400">© 2025 JC de Las Lomas — Sitio institucional</p>
+        <div class="flex items-center gap-4 text-slate-300">
+          <a href="#" title="Facebook" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" title="Instagram" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" title="Contacto" class="hover:text-white"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    // Init AOS
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({ once: true });
+    });
+
+    // Mobile menu toggle
+    const btn = document.getElementById('btnMobile');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // CTA top
+    document.getElementById('ctaTop').addEventListener('click', () => {
+      document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Simple mock form handler
+    function handleForm(e) {
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.classList.remove('hidden');
+      status.textContent = 'Formulario simulado — datos no enviados.';
+      setTimeout(() => {
+        status.textContent = 'Gracias — mensaje registrado localmente.';
+      }, 1100);
+      return false;
+    }
+  </script>
+</body>
+</html>
