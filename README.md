@@ -151,5 +151,5 @@ En la sección de proyectos (`#proyectos`), agrega más tarjetas siguiendo la es
 
 ---
 
-¡Buena suerte con tu portafolio! 🚀
+¡Gracias Profe! 🚀
 
